@@ -10,7 +10,18 @@
     <script>
         let num = 99;
         for(let i=1; i <= 99; i++) {
-            document.write(`${i} <br/>`);
+            if( i%3 == 0 && i%7 == 0 ) {
+                document.write(`OpenSource <br/>`);
+            }
+            else if ( i%3 == 0 ) {
+                document.write(`Open <br/>`);
+            }
+            else if ( i%7 == 0 ) {
+                document.write(`Sourse <br/>`);
+            }
+            else {
+                document.write(`${i} <br/>`);
+            }
         }    
     </script>
 </body>
