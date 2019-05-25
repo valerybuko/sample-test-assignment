@@ -26,9 +26,12 @@
         })
         console.log(filteredArray);
 
-        
+        let result = filteredArray.reduce((sum, elem) => {
+            return sum += elem;
+        }, 0)
+        console.log(result);
+        document.write(`<br/> Sum of the list items: ${result}`);
 
-       // alert (result);
     </script>
 </body>
 </html>
