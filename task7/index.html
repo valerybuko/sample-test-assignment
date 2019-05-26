@@ -16,14 +16,16 @@
         for(let i=startUpperCaseValue; i <= finishedUpperCaseValue; i++) {
             arrayUpperCaseCodes.push(i);
         }
-        //console.log(arrayUpperCaseCodes); 
+        console.log(arrayUpperCaseCodes); 
 
         startLowerCaseValue = 97;
         finishedLowerCaseValue = 122;
         for(let i=startLowerCaseValue; i <= finishedLowerCaseValue; i++) {
             arrayLoweCaseCodes.push(i);
         }
-        //console.log(arrayLoweCaseCodes);
+        console.log(arrayLoweCaseCodes);
+
+        convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes)
 
         function convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes) {
             let alphabetUpperCaseArray = [];
@@ -44,7 +46,6 @@
             return resultArray;
         }
 
-        convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes);
     </script>
 </body>
 </html>
