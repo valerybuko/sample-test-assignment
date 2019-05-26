@@ -16,38 +16,35 @@
         for(let i=startUpperCaseValue; i <= finishedUpperCaseValue; i++) {
             arrayUpperCaseCodes.push(i);
         }
-        console.log(arrayUpperCaseCodes); 
+        //console.log(arrayUpperCaseCodes); 
 
         startLowerCaseValue = 97;
         finishedLowerCaseValue = 122;
         for(let i=startLowerCaseValue; i <= finishedLowerCaseValue; i++) {
             arrayLoweCaseCodes.push(i);
         }
-        console.log(arrayLoweCaseCodes);
+        //console.log(arrayLoweCaseCodes);
 
-        function convertCodeArraysToLetterArray(arrayLowerCaseCodes, arrayUpperCaseCodes) {
+        function convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes) {
+            let alphabetUpperCaseArray = [];
+            let alphabetLowerCaseArray = [];
 
+            arrayLoweCaseCodes.map(element => {
+            alphabetLowerCaseArray.push(String.fromCharCode(element))
+            })
+            //console.log(alphabetLowerCaseArray);
+
+            arrayUpperCaseCodes.map(element => {
+            alphabetUpperCaseArray.push(String.fromCharCode(element));
+            })
+            //console.log(alphabetUpperCaseArray);
+
+            let resultArray = [...alphabetLowerCaseArray, ...alphabetUpperCaseArray];
+            console.log(resultArray);
+            return resultArray;
         }
 
-        let alphabetUpperCaseArray = [];
-        let alphabetLowerCaseArray = [];
-
-        arrayUpperCaseCodes.map(element => {
-            alphabetUpperCaseArray.push(String.fromCharCode(element));
-        })
-        console.log(alphabetUpperCaseArray);
-
-        arrayLoweCaseCodes.map(element => {
-            alphabetLowerCaseArray.push(String.fromCharCode(element))
-        })
-        console.log(alphabetLowerCaseArray);
-
-        let resultArray = [...alphabetLowerCaseArray, ...alphabetUpperCaseArray];
-        console.log(resultArray);
-
-
-
-       
+        convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes);
     </script>
 </body>
 </html>
