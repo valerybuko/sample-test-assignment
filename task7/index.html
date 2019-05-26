@@ -25,8 +25,20 @@
         }
         console.log(arrayLoweCaseCodes);
 
-        let alphabetUpperCaseArray;
-        let alphabetLowerCaseArray;
+        let alphabetUpperCaseArray = [];
+        let alphabetLowerCaseArray = [];
+
+        arrayUpperCaseCodes.map(element => {
+            alphabetUpperCaseArray.push(String.fromCharCode(element));
+        })
+        console.log(alphabetUpperCaseArray);
+
+        arrayLoweCaseCodes.map(element => {
+            alphabetLowerCaseArray.push(String.fromCharCode(element))
+        })
+        console.log(alphabetLowerCaseArray);
+
+
 
        
     </script>
