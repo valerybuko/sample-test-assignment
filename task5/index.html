@@ -14,7 +14,13 @@
         let baseurl = 'https://jsonplaceholder.typicode.com/posts';
         fetch(baseurl)
         .then(response => response.json())
-        
+        .then(data => {
+            //console.log(data);
+            let find = data.find((jsonObject) => {
+                return jsonObject.id == 5;
+            })
+            console.log(find);
+        })
 
     </script>
 </body>
