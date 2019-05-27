@@ -13,12 +13,9 @@
         <div>C</div>
     </div>
     <script>
-        let containerElement = document.querySelector('.container');
-        let nodes = containerElement.children;
-        document.write(`All children of the container HTML element: <br/>`);
-        for(let i=0; i < nodes.length; i++) {
-            document.write(nodes[i] + "<br/>");
-        }
+        const containerElement = document.querySelector(".container");
+        const arrayOfChildren = Array.from(containerElement.children);
+        console.log(arrayOfChildren);
     </script>
 </body>
 </html>
