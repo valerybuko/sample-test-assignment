@@ -1,52 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task 7</title>
 </head>
+
 <body>
     <script>
-        let arrayLoweCaseCodes = [];
-        let arrayUpperCaseCodes = [];
-        
-        startUpperCaseValue = 65;
-        finishedUpperCaseValue = 90;
-        for(let i=startUpperCaseValue; i <= finishedUpperCaseValue; i++) {
-            arrayUpperCaseCodes.push(i);
-        }
-        console.log(arrayUpperCaseCodes); 
+        function getArrayOfAlphabet() {
+            function range(start, end) {
+                return Array(end - start + 1)
+                    .fill()
+                    .map((_, idx) => start + idx);
+            }
 
-        startLowerCaseValue = 97;
-        finishedLowerCaseValue = 122;
-        for(let i=startLowerCaseValue; i <= finishedLowerCaseValue; i++) {
-            arrayLoweCaseCodes.push(i);
-        }
-        console.log(arrayLoweCaseCodes);
-
-        let result = convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes);
-        document.write(`Result array: ${result}`);
-
-        function convertCodeArraysToLetterArray(arrayLoweCaseCodes, arrayUpperCaseCodes) {
-            let alphabetUpperCaseArray = [];
-            let alphabetLowerCaseArray = [];
-
-            arrayLoweCaseCodes.map(element => {
-            alphabetLowerCaseArray.push(String.fromCharCode(element))
-            })
-            //console.log(alphabetLowerCaseArray);
-
-            arrayUpperCaseCodes.map(element => {
-            alphabetUpperCaseArray.push(String.fromCharCode(element));
-            })
-            //console.log(alphabetUpperCaseArray);
-
-            let resultArray = [...alphabetLowerCaseArray, ...alphabetUpperCaseArray];
-            console.log(resultArray);
-            return resultArray;
+            return [...range(65, 90), ...range(97, 122)].map((code) =>
+                String.fromCharCode(code)
+            );
         }
 
+        let resultAlphabetArray = getArrayOfAlphabet();
+        console.log(resultAlphabetArray);
     </script>
 </body>
+
 </html>
