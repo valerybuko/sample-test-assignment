@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task 5</title>
 </head>
+
 <body>
     <div class="container">
-        
+
     </div>
     <script>
-        let baseurl = 'https://jsonplaceholder.typicode.com/posts';
-        fetch(baseurl)
-        .then(response => response.json())
-        .then(data => {
-            //console.log(data);
-            let find = data.find((jsonObject) => {
-                return jsonObject.id == 5;
-            })
-            console.log(find);
-        })
-        .catch(error => console.error(error))
+        const baseURL = `https://jsonplaceholder.typicode.com/posts`;
+        const idNum = 5;
 
+        getObjectFromUrlById(baseURL, idNum);
+
+        function getObjectFromUrlById(url, id) {
+            fetch(url)
+                .then((response) => response.json())
+                .then((data) => {
+                    let find = data.find((object) => {
+                        return object.id === id;
+                    });
+                    console.log(find);
+                })
+                .catch((error) => {
+                    throw error;
+                });
+        }
     </script>
 </body>
+
 </html>
