@@ -16,10 +16,12 @@
             });
         }
 
-        validateStringsByRegexp(/(Softeq.*#rules)|(#rules.*Softeq)/gm, [
+       let resulOfValidate = validateStringsByRegexp(/(Softeq.*#rules)|(#rules.*Softeq)/, [
             `Softeq asdfasdf #rules`,
             `#rules asdf adsf Softeq`
         ]);
+        
+        console.log (resulOfValidate);
 
     </script>
 </body>
