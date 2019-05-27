@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task 4</title>
 </head>
+
 <body>
     <script>
-        let array = ['1', '2', 'str', '3', '999.5', '4', '15.3', 'sss', '5.5'];
-    
+        const input = [`1`, `2`, `str`, `3`, `999.5`, `4`, `15.3`, `sss`, `5.5`];
+        console.log(`input: ${input}`);
 
-        document.write(`list of items: `);
-        array.forEach((i) => {
-            document.write(` ${i} | `);
-        });
+        const getArrayOfInteger = (array) => {
+            return array.map((i) => +i).filter((i) => Number.isInteger(i));
+        };
 
-        let newArray = array.map((elem) => {
-            return +elem;
-        })
-        console.log(newArray);
+        const getSumOfArray = (array) => {
+            return array.reduce((sum, elem) => {
+                return (sum += elem);
+            }, 0);
+        };
 
-        let filteredArray = newArray.filter(elem => {
-            return Number.isInteger(elem)
-        })
-        console.log(filteredArray);
+        function sumOfInteger(array) {
+            const arrayOfInteger = getArrayOfInteger(array);
+            return getSumOfArray(arrayOfInteger);
+        }
 
-        let result = filteredArray.reduce((sum, elem) => {
-            return sum += elem;
-        }, 0)
-        console.log(result);
-        document.write(`<br/> Sum of the list items: ${result}`);
-
+        const output = sumOfInteger(input);
+        console.log(`output: ${output}`);
     </script>
 </body>
+
 </html>
